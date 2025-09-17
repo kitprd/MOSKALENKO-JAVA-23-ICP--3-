@@ -1,22 +1,19 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Scanner a = new Scanner(System.in);
-        System.out.print("Введите число 1: ");
-        int h = a.nextInt();
-        System.out.print("Введите число 2: ");
-        int b = a.nextInt();
-        System.out.print("Введите число 3: ");
-        int c = a.nextInt();
-        System.out.print("Введите число 4: ");
-        int d = a.nextInt();
-        System.out.print("Введите число 5: ");
-        int e = a.nextInt();
-        int max = h;
-        if (b > max) max = b;
-        if (c > max) max = c;
-        if (d > max) max = d;
-        if (e > max) max = e;
+        Scanner scanner = new Scanner(System.in);
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.print("Введите число " + i + ": ");
+            int number = scanner.nextInt();
+
+            if (number > max) {
+                max = number;
+            }
+        }
         System.out.println("Наибольшее число: " + max);
+        scanner.close();
     }
 }
